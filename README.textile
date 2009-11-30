@@ -29,6 +29,7 @@ h2. Configuration
 
 <pre><code>
   kldload ng_sbinat
+  kldload ng_ether
   ngctl mkpeer em0: sbinat upper in
   ngctl name em0:upper sbinat
   ngctl conn sbinat: em0: out lower
