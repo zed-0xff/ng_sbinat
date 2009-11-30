@@ -19,7 +19,7 @@ h2. Limitations
 h2. Installation
 
 <pre><code>
-  git clone http://github.com/zed-0xff/ng_sbinat
+  git clone git://github.com/zed-0xff/ng_sbinat.git
   cd ng_sbinat
   make
   make install
