@@ -1,0 +1,37 @@
+h1. ng_sbinat - (Symmetric | Simple) Bidirectional NAT
+
+h2. Requirements
+
+ * FreeBSD >= 7.0 (tested on 7.2, should work on all 7.x, and, maybe, on 6.x too)
+ * NetGraph
+ * kernel sources (for building)
+
+h2. Memory usage & speed
+
+Lightning fast! B/c there's no any heavy data processing and no packet checksums recalculation.
+And negligible memory usage b/c there's no remembering of ip<->ip translation pairs.
+
+h2. Limitations
+ 
+ * only symmetrinc mapping of one /16 subnet to another /16 subnet is possible now (f.ex 192.168.x.y <-> 10.22.x.y)
+ * passive FTP will not work
+
+h2. Installation
+
+<pre><code>
+  git clone http://github.com/zed-0xff/ng_sbinat
+  cd ng_sbinat
+  make
+  make install
+</code></pre>
+
+h2. Configuration
+
+<pre><code>
+  kldload ng_sbinat
+  ngctl mkpeer em0: sbinat upper in
+  ngctl name em0:upper sbinat
+  ngctl conn sbinat: em0: out lower
+  ngctl msg sbinat: setinaddr 192.168.0.0
+  ngctl msg sbinat: setoutaddr 10.22.0.0
+</code></pre>
