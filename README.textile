@@ -9,11 +9,11 @@ h2. Requirements
 h2. Memory usage & speed
 
 Lightning fast! B/c there's no any heavy data processing and no packet checksums recalculation.
-And negligible memory usage b/c there's no remembering of ip<->ip translation pairs.
+And negligible memory usage b/c there's no remembering of ip<-->ip translation pairs.
 
 h2. Limitations
  
- * only symmetrinc mapping of one /16 subnet to another /16 subnet is possible now (f.ex 192.168.x.y <-> 10.22.x.y)
+ * only symmetrinc mapping of one /16 subnet to another /16 subnet is possible now (f.ex 192.168.x.y <--> 10.22.x.y)
  * passive FTP will not work
 
 h2. Installation
